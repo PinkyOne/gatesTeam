@@ -6,6 +6,7 @@ import Tabs from './components/Tabs';
 import Searches from './components/Searches';
 import Clicks from './components/Clicks';
 import Bookings from './components/Bookings';
+import SystemInfo from "./components/SystemInfo";
 
 
 const styles = theme => ({
@@ -36,6 +37,7 @@ class Main extends Component {
         <Typography variant="h5" component="h3" gutterBottom>
           Main metrics
         </Typography>
+        <SystemInfo />
         <Tabs value={value} handleChange={this.handleChange} />
         <Searches isImprovement />
         <Clicks />

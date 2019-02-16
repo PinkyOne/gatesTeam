@@ -1,0 +1,48 @@
+.Card {
+    display: flex;
+    width: 610px;
+    margin-top: 25px;
+}
+
+.Indicators {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MainInfo {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.MainInfo-Title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.AdditionalInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 85px;
+}
+
+.MainInfo-Current {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    margin-top: 15px;
+}
+
+.MainInfo-Previous {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.MainInfo-Label {
+    margin-left: 10px;
+}

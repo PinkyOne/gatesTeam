@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Tabs from './components/Tabs';
 import Searches from './components/Searches';
+import Clicks from './components/Clicks';
+import Bookings from './components/Bookings';
 
 
 const styles = theme => ({
@@ -35,7 +37,9 @@ class Main extends Component {
           Main metrics
         </Typography>
         <Tabs value={value} handleChange={this.handleChange} />
-        <Searches />
+        <Searches isImprovement />
+        <Clicks />
+        <Bookings isImprovement />
       </Paper>
     );
   }

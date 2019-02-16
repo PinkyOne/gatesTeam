@@ -3,7 +3,7 @@ import Card from '../../../../components/Card';
 import { ReactComponent as FilterGreen } from './assets/FilterGreen.svg';
 import { ReactComponent as FilterRed } from './assets/FilterRed.svg';
 
-const Searches = ({ isImprovement }) => (
+const Search = ({ isImprovement }) => (
   <Card
     isImprovement={isImprovement}
     icon={isImprovement ? <FilterGreen /> : <FilterRed />}
@@ -23,4 +23,4 @@ const Searches = ({ isImprovement }) => (
   />
 );
 
-export default Searches;
+export default Search;

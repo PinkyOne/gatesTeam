@@ -20,6 +20,7 @@ const Clicks = ({ isImprovement }) => (
       { link: '/test2', label: 'Test2' },
       { link: '/test3', label: 'Test3' },
     ]}
+    withArrow
   />
 );
 

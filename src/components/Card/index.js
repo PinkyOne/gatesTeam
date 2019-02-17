@@ -64,13 +64,14 @@ class Card extends Component {
   render() {
     const {
       icon,
+      withArrow,
     } = this.props;
 
     return (
       <div className="Card">
         <div className="Indicators">
           {icon}
-          <Arrow />
+          {withArrow && <Arrow />}
         </div>
         {this.renderMainInfo()}
         {this.renderAdditionalInfo()}

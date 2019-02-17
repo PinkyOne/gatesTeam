@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 import Tabs from './components/Tabs';
 import Searches from './components/Searches';
 import Clicks from './components/Clicks';
 import Bookings from './components/Bookings';
-import SystemInfo from "./components/SystemInfo";
+import SystemInfo from './components/SystemInfo';
 
 
 const styles = theme => ({
@@ -40,7 +41,9 @@ class Main extends Component {
         <SystemInfo />
         <Tabs value={value} handleChange={this.handleChange} />
         <Searches isImprovement />
+        <Divider variant="middle" />
         <Clicks />
+        <Divider variant="middle" />
         <Bookings isImprovement />
       </Paper>
     );

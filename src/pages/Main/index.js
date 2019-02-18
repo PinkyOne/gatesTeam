@@ -35,11 +35,11 @@ class Main extends Component {
 
     return (
       <Paper className={classes.root} elevation={1}>
-        <Typography variant="h5" component="h3" gutterBottom>
+        <Typography variant="h4" component="h3" gutterBottom>
           Main metrics
         </Typography>
-        <SystemInfo />
         <Tabs value={value} handleChange={this.handleChange} />
+        <SystemInfo />
         <Searches isImprovement />
         <Divider variant="middle" />
         <Clicks />

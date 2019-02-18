@@ -1,0 +1,36 @@
+.Container {
+    width: 610px;
+    height: 100px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Statistics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Statistics-Item {
+    display: flex;
+    flex-direction: column;
+}
+
+.Graph {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Graph-Line {
+    width: 100%;
+    height: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.Graph-Description {
+
+}

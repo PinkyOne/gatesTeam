@@ -60,25 +60,45 @@ class SystemInfo extends Component {
           {sortedErrors
             .slice(0, 3)
             .map(({ count }, index) => (
-              <div
-                style={{
-                  backgroundColor: COLORS[index % COLORS.length],
-                  width: `${(count * 100 / errorsCount)}%`,
-                }}
-              />
+              this.renderGraphLineChunk({ index, count, totalCount: errorsCount })
             ))
           }
-          <div
-            style={{
-              backgroundColor: COLOR_GREY,
-              width: `${(unknownErrorsCount * 100 / errorsCount)}%`,
-            }}
-          />
+          {this.renderGraphLineChunk({ count: unknownErrorsCount, totalCount: errorsCount })}
         </div>
-        <div className="Graph-Description" />
+        <div className="Graph-Description">
+          {sortedErrors
+            .slice(0, 3)
+            .map(({ code, count }, index) => (
+              this.renderGraphDescItem({ code, count, index })
+            ))
+          }
+          {this.renderGraphDescItem({ count: unknownErrorsCount })}
+        </div>
       </div>
     );
   };
+
+  renderGraphLineChunk = ({ index = null, count, totalCount }) => (
+    <div
+      style={{
+        backgroundColor: index === null ? COLOR_GREY : COLORS[index % COLORS.length],
+        width: `${(count * 100 / totalCount)}%`,
+      }}
+    />
+  );
+
+  renderGraphDescItem = ({ code = null, count, index = null }) => (
+    <div
+      className="Graph-Description-Item"
+    >
+      <div
+        className="Graph-Description-Item-Indicator"
+        style={{ backgroundColor: index === null ? COLOR_GREY : COLORS[index % COLORS.length] }}
+      />
+      <Typography variant="h6">{`${code ? `Error ${code}` : 'Other'}: ${count}`}</Typography>
+    </div>
+  );
+
 
   render() {
     return (

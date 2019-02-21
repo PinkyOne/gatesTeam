@@ -38,11 +38,10 @@ class MyHandler(BaseHTTPRequestHandler):
         except (ValueError, KeyError, TypeError):
             print("JSON format error")
 
-
+        response["data"] = {}
         try:
-            response["data"] = {}
-            for key in list(filter(lambda x: 'today' in x,data["data"][0].keys())):
-                response["data"][key] = data[key]
+            for key in list(filter(lambda x: type in x, data["data"][0].keys())):
+                response["data"][key] = data["data"][0][key]
         except (ValueError, KeyError, TypeError):
             print("JSON format error")
 

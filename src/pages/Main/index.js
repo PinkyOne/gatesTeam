@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import moment from 'moment';
 import Tabs from './components/Tabs';
 import Searches from './components/Searches';
 import Clicks from './components/Clicks';
@@ -49,25 +50,58 @@ class Main extends Component {
     };
   };
 
+  getCurrentPeriod = (period) => {
+    switch (period) {
+      case 0:
+        return 'Last hour';
+      case 1:
+        return 'Today';
+      case 2:
+        return 'Yesterday';
+      case 3:
+        return 'Last 3 days';
+      default:
+        return null;
+    }
+  };
+
+  getPreviousPeriod = (period) => {
+    switch (period) {
+      case 0:
+        return 'Previous Last hour';
+      case 1:
+        return `Previous ${moment().format('dddd')}`;
+      case 2:
+        return `Previous ${moment().subtract(1, 'days').format('dddd')}`;
+      case 3:
+        return 'Previous Last 3 days';
+      default:
+        return null;
+    }
+  };
+
   render() {
     const {
-      classes, tabValue, errors, data,
+      classes, tabValue, errors, data, isFetching,
     } = this.props;
-
+    const periods = {
+      currentPeriod: this.getCurrentPeriod(tabValue),
+      previousPeriod: this.getPreviousPeriod(tabValue),
+    };
     return (
       <Paper className={classes.root} elevation={1}>
         <Typography variant="h4" component="h3" gutterBottom>
           Main metrics
         </Typography>
         <Tabs value={tabValue} handleChange={this.handleChange} />
-        {errors && data && (
+        {!isFetching && (
           <React.Fragment>
             <SystemInfo errors={errors} statistics={this.getStatistics()} />
-            <Searches isImprovement />
+            <Searches {...{ ...data, ...periods }} />
             <Divider variant="middle" />
-            <Clicks />
+            <Clicks {...{ ...data, ...periods }} />
             <Divider variant="middle" />
-            <Bookings isImprovement />
+            <Bookings {...{ ...data, ...periods }} />
           </React.Fragment>
         )}
       </Paper>

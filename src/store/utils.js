@@ -8,7 +8,8 @@ export const normalizeResponse = ({ errors, data }, period) => {
   const normalizedResponse = { errors, data: {} };
   Object.keys(data).forEach(
     (key) => {
-      const newKey = snakeToCamel(key.substring(0, key.indexOf(`_${period}`)));
+      const indexToCut = key.indexOf(`_${period}`);
+      const newKey = snakeToCamel(indexToCut > 0 ? key.substring(0, indexToCut) : key);
       normalizedResponse.data[newKey] = data[key];
     },
   );

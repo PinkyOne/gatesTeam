@@ -9,6 +9,7 @@ import { normalizeResponse } from './utils';
 
 function* fetchData(action) {
   try {
+    yield put(actions.setFetching(true));
     yield put(actions.changePeriod(action.payload.periodIndex));
 
     const period = PERIODS[action.payload.periodIndex];
@@ -17,6 +18,9 @@ function* fetchData(action) {
     yield put(actions.fetchDataSucceeded(normalizeResponse(data, period)));
   } catch (e) {
     yield put(actions.fetchDataSucceeded({ message: e.message }));
+  }
+  finally {
+    yield put(actions.setFetching(false));
   }
 }
 

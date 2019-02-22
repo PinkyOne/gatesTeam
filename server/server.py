@@ -42,6 +42,8 @@ class MyHandler(BaseHTTPRequestHandler):
         try:
             for key in list(filter(lambda x: type in x, data["data"][0].keys())):
                 response["data"][key] = data["data"][0][key]
+            response["data"]["mobile_pessimizer"] = data["data"][0]["mobile_pessimizer"]
+            response["data"]["web_pessimizer"] = data["data"][0]["web_pessimizer"]
         except (ValueError, KeyError, TypeError):
             print("JSON format error")
 

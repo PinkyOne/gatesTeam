@@ -1,24 +1,37 @@
 import React from 'react';
+import * as numeral from 'numeral';
 import Card from '../../../../components/Card';
+import { getFormattedDiff, isImprovement } from '../../../../utils';
 import { ReactComponent as ClickGreen } from './assets/ClickGreen.svg';
 import { ReactComponent as ClickRed } from './assets/ClickRed.svg';
+import { GreenTypography, RedTypography } from '../../../../components/Card/components/SecondaryTypography';
 
-const Clicks = ({ isImprovement }) => (
+const formatCtr = ctr => numeral(ctr / 100).format('0[.0]%');
+
+
+const Clicks = ({
+  clicksCurrent, clicksPrevious, ctr, currentPeriod, previousPeriod,
+}) => (
   <Card
-    isImprovement={isImprovement}
-    icon={isImprovement ? <ClickGreen /> : <ClickRed />}
+    isImprovement={isImprovement(clicksCurrent, clicksPrevious)}
+    icon={isImprovement(clicksCurrent, clicksPrevious) ? <ClickGreen /> : <ClickRed />}
     title="Clicks"
-    titleDiff="+5%"
-    currentInfoValue="Test"
-    previousInfoValue="Test"
-    currentInfoLabel="Test"
-    previousInfoLabel="Test"
-    primaryInfo="Test primary"
-    secondaryInfo="Test secondary"
+    titleDiff={getFormattedDiff(clicksCurrent, clicksPrevious)}
+    currentInfoValue={clicksCurrent || 'No Data'}
+    previousInfoValue={clicksPrevious || 'No Data'}
+    currentInfoLabel={currentPeriod}
+    previousInfoLabel={previousPeriod}
+    primaryInfo={
+      (typeof ctr === 'number'
+      && (ctr >= 1
+        ? <GreenTypography variant="subtitle1">{`CTR: ${formatCtr(ctr)}`}</GreenTypography>
+        : <RedTypography variant="subtitle1">{`CTR: ${formatCtr(ctr)}`}</RedTypography>))
+      || 'CTR: No Data'
+    }
+    secondaryInfo="Conversion from searches  to clicks on all devices."
     helpLinks={[
-      { link: '/test1', label: 'Test1' },
-      { link: '/test2', label: 'Test2' },
-      { link: '/test3', label: 'Test3' },
+      { link: '/ctr', label: 'CTR' },
+      { link: '/clicks', label: 'Clicks' },
     ]}
     withArrow
   />

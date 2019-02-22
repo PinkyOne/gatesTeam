@@ -20,6 +20,11 @@ export const actions = {
     type: actions.CHANGE_PERIOD,
     payload: { periodIndex },
   }),
+  SET_FETCHING: 'SET_FETCHING',
+  setFetching: value => ({
+    type: actions.SET_FETCHING,
+    payload: value,
+  }),
 };
 
 export default actions;

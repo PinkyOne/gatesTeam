@@ -25,12 +25,12 @@ class Card extends Component {
           <Chip titleDiff={titleDiff} isImprovement={isImprovement} />
         </div>
         <div className="MainInfo-Current">
-          <Typography variant="h5">{currentInfoValue}</Typography>
-          <div className="MainInfo-Label"><Typography variant="h6">{currentInfoLabel}</Typography></div>
+          <Typography variant="subtitle1">{currentInfoValue}</Typography>
+          <div className="MainInfo-Label"><Typography variant="subtitle1">{currentInfoLabel}</Typography></div>
         </div>
         <div className="MainInfo-Previous">
-          <SecondaryTypography variant="h5">{previousInfoValue}</SecondaryTypography>
-          <div className="MainInfo-Label"><SecondaryTypography variant="h6">{previousInfoLabel}</SecondaryTypography></div>
+          <SecondaryTypography variant="subtitle2">{previousInfoValue}</SecondaryTypography>
+          <div className="MainInfo-Label"><SecondaryTypography variant="subtitle2">{previousInfoLabel}</SecondaryTypography></div>
         </div>
       </div>
     );
@@ -44,16 +44,20 @@ class Card extends Component {
     } = this.props;
     return (
       <div className="AdditionalInfo">
-        <Typography variant="h5" gutterBottom>{primaryInfo}</Typography>
-        <SecondaryTypography variant="h6" gutterBottom>{secondaryInfo}</SecondaryTypography>
+        {
+          typeof primaryInfo === 'string'
+            ? <Typography variant="subtitle1" gutterBottom>{primaryInfo}</Typography>
+            : primaryInfo
+        }
+        <SecondaryTypography variant="subtitle2" gutterBottom>{secondaryInfo}</SecondaryTypography>
         <Typography>
-          <Typography variant="h6" inline>Help: </Typography>
+          <Typography variant="subtitle2" inline>Help: </Typography>
           {helpLinks.map(({ label, link }, index) => (
             <React.Fragment>
-              <Link key={link} variant="h6" href={link}>
+              <Link key={link} variant="subtitle2" href={link}>
                 {label}
               </Link>
-              {index !== helpLinks.length - 1 && <Typography variant="h6" inline>,</Typography>}
+              {index !== helpLinks.length - 1 && <Typography variant="subtitle2" inline>,</Typography>}
             </React.Fragment>
           ))}
         </Typography>

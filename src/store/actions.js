@@ -2,9 +2,9 @@ export const actions = {
   DATA_FETCH_REQUESTED: 'DATA_FETCH_REQUESTED',
   DATA_FETCH_SUCCEEDED: 'DATA_FETCH_SUCCEEDED',
   DATA_FETCH_FAILED: 'DATA_FETCH_FAILED',
-  fetchData: period => ({
+  fetchData: periodIndex => ({
     type: actions.DATA_FETCH_REQUESTED,
-    payload: { period },
+    payload: { periodIndex },
   }),
   fetchDataSucceeded: response => ({
     type: actions.DATA_FETCH_SUCCEEDED,

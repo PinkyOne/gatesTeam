@@ -10,6 +10,7 @@ import Searches from './components/Searches';
 import Clicks from './components/Clicks';
 import Bookings from './components/Bookings';
 import SystemInfo from './components/SystemInfo';
+
 import actions from '../../store/actions';
 
 
@@ -25,13 +26,18 @@ const styles = theme => ({
 });
 
 class Main extends Component {
+  componentDidMount() {
+    const { fetchData, tabValue } = this.props;
+    fetchData(tabValue);
+  }
+
   handleChange = (event, value) => {
-    const { changePeriod } = this.props;
-    changePeriod(value);
+    const { fetchData } = this.props;
+    fetchData(value);
   };
 
   render() {
-    const { props: { classes, tabValue } } = this;
+    const { classes, tabValue } = this.props;
 
     return (
       <Paper className={classes.root} elevation={1}>
@@ -54,7 +60,7 @@ const mapStateToProps = state => ({
   tabValue: state.periodIndex,
 });
 const mapDispatchToProps = dispatch => ({
-  changePeriod: periodIndex => dispatch(actions.changePeriod(periodIndex)),
+  fetchData: periodIndex => dispatch(actions.fetchData(periodIndex)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Main));

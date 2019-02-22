@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import * as numeral from 'numeral';
 import Typography from '@material-ui/core/Typography';
 import SecondaryTypography from '../../../../components/Card/components/SecondaryTypography';
 
 import './index.css';
-import * as numeral from 'numeral';
 
 const COLORS = [
   '#FFCC00', '#5856D5', '#2196F3',

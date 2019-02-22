@@ -5,12 +5,16 @@ import axios from 'axios';
 
 import actions from './actions';
 import { PERIODS } from './reducer';
+import { normalizeResponse } from './utils';
 
 function* fetchData(action) {
   try {
     yield put(actions.changePeriod(action.payload.periodIndex));
-    const data = yield call(axios.get, `http://localhost:8080/${PERIODS[action.payload.periodIndex]}`);
-    yield put(actions.fetchDataSucceeded(data));
+
+    const period = PERIODS[action.payload.periodIndex];
+
+    const { data } = yield call(axios.get, `http://localhost:8080/${period}`);
+    yield put(actions.fetchDataSucceeded(normalizeResponse(data, period)));
   } catch (e) {
     yield put(actions.fetchDataSucceeded({ message: e.message }));
   }

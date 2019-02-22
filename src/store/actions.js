@@ -8,11 +8,11 @@ export const actions = {
   }),
   fetchDataSucceeded: response => ({
     type: actions.DATA_FETCH_SUCCEEDED,
-    payload: { response },
+    payload: { ...response },
   }),
   fetchDataFailted: response => ({
     type: actions.DATA_FETCH_FAILED,
-    payload: { response },
+    payload: { ...response },
   }),
 
   CHANGE_PERIOD: 'CHANGE_PERIOD',

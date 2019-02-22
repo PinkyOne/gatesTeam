@@ -36,8 +36,23 @@ class Main extends Component {
     fetchData(value);
   };
 
+  getStatistics = () => {
+    const {
+      props: {
+        data: {
+          errors, avgErrors, zeroes, avgZeroes, timeout, avgTimeout,
+        },
+      },
+    } = this;
+    return {
+      errors, avgErrors, zeroes, avgZeroes, timeout, avgTimeout,
+    };
+  };
+
   render() {
-    const { classes, tabValue } = this.props;
+    const {
+      classes, tabValue, errors, data,
+    } = this.props;
 
     return (
       <Paper className={classes.root} elevation={1}>
@@ -45,19 +60,24 @@ class Main extends Component {
           Main metrics
         </Typography>
         <Tabs value={tabValue} handleChange={this.handleChange} />
-        <SystemInfo />
-        <Searches isImprovement />
-        <Divider variant="middle" />
-        <Clicks />
-        <Divider variant="middle" />
-        <Bookings isImprovement />
+        {errors && data && (
+          <React.Fragment>
+            <SystemInfo errors={errors} statistics={this.getStatistics()} />
+            <Searches isImprovement />
+            <Divider variant="middle" />
+            <Clicks />
+            <Divider variant="middle" />
+            <Bookings isImprovement />
+          </React.Fragment>
+        )}
       </Paper>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  tabValue: state.periodIndex,
+const mapStateToProps = ({ periodIndex, ...state }) => ({
+  tabValue: periodIndex,
+  ...state,
 });
 const mapDispatchToProps = dispatch => ({
   fetchData: periodIndex => dispatch(actions.fetchData(periodIndex)),

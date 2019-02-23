@@ -6,7 +6,7 @@ import { mainInfo, titleInfo } from '../../../../components/Card/utils';
 
 import { ReactComponent as ClickGreen } from './assets/ClickGreen.svg';
 import { ReactComponent as ClickRed } from './assets/ClickRed.svg';
-import { GreenTypography, RedTypography } from '../../../../components/Card/components/SecondaryTypography/index';
+import { GreenTypography, RedTypography } from '../../../../components/SecondaryTypography/index';
 
 const formatCtr = ctr => numeral(ctr / 100).format('0[.0]%');
 

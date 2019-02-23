@@ -6,40 +6,18 @@ import MainInfo from './components/MainInfo';
 import AdditionalInfo from './components/AdditionalInfo';
 
 const Card = ({
-  icon,
   withArrow,
-  title,
-  titleDiff,
-  isImprovement,
-  currentInfoValue,
-  previousInfoValue,
-  currentInfoLabel,
-  previousInfoLabel,
-  primaryInfo,
-  secondaryInfo,
-  helpLinks,
+  titleInfo: { icon, ...restTitleInfo },
+  mainInfo,
+  additionalInfo,
 }) => (
   <div className="Card">
     <div className="Indicators">
       {icon}
       {withArrow && <Arrow />}
     </div>
-    <MainInfo {...{
-      title,
-      titleDiff,
-      isImprovement,
-      currentInfoValue,
-      previousInfoValue,
-      currentInfoLabel,
-      previousInfoLabel,
-    }}
-    />
-    <AdditionalInfo {...{
-      primaryInfo,
-      secondaryInfo,
-      helpLinks,
-    }}
-    />
+    <MainInfo {...mainInfo} {...restTitleInfo} />
+    <AdditionalInfo {...additionalInfo} />
   </div>
 );
 

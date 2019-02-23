@@ -33,9 +33,9 @@ const Clicks = ({
   ctr,
 }) => (
   <Card
-    {...titleInfo('Clicks', clicksCurrent, clicksPrevious, <ClickGreen />, <ClickRed />)}
-    {...mainInfo(clicksCurrent, clicksPrevious, currentPeriod, previousPeriod)}
-    {...additionalInfo(ctr)}
+    titleInfo={titleInfo('Clicks', clicksCurrent, clicksPrevious, <ClickGreen />, <ClickRed />)}
+    mainInfo={mainInfo(clicksCurrent, clicksPrevious, currentPeriod, previousPeriod)}
+    additionalInfo={additionalInfo(ctr)}
     withArrow
   />
 );

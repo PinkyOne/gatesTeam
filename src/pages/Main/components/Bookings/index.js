@@ -40,9 +40,9 @@ const Bookings = ({
   str,
 }) => (
   <Card
-    {...titleInfo('Bookings', bookingsCurrent, bookingsPrevious, <ShoppingCardGreen />, <ShoppingCardRed />)}
-    {...mainInfo(bookingsCurrent, bookingsPrevious, currentPeriod, previousPeriod)}
-    {...additionalInfo(str, avgPrice)}
+    titleInfo={titleInfo('Bookings', bookingsCurrent, bookingsPrevious, <ShoppingCardGreen />, <ShoppingCardRed />)}
+    mainInfo={mainInfo(bookingsCurrent, bookingsPrevious, currentPeriod, previousPeriod)}
+    additionalInfo={additionalInfo(str, avgPrice)}
   />
 );
 

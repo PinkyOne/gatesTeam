@@ -39,9 +39,9 @@ const Searches = ({
   webPessimizer,
 }) => (
   <Card
-    {...titleInfo('Searches', searchesCurrent, searchesPrevious, <FilterGreen />, <FilterRed />)}
-    {...mainInfo(searchesCurrent, searchesPrevious, currentPeriod, previousPeriod)}
-    {...additionalInfo(mobilePessimizer, webPessimizer)}
+    titleInfo={titleInfo('Searches', searchesCurrent, searchesPrevious, <FilterGreen />, <FilterRed />)}
+    mainInfo={mainInfo(searchesCurrent, searchesPrevious, currentPeriod, previousPeriod)}
+    additionalInfo={additionalInfo(mobilePessimizer, webPessimizer)}
     withArrow
   />
 );

@@ -17,12 +17,12 @@ class SystemInfo extends Component {
         statistics,
       },
     } = this;
-    const formatFunc = value => numeral(value).format('0.000%');
+    const formatFunc = value => numeral(value).format('0.00%');
 
     return Object.keys(statistics)
       .reduce((acc, key) => ({
         ...acc,
-        [key]: statistics[key] && formatFunc(statistics[key]),
+        [key]: statistics[key] && formatFunc(statistics[key] / 100),
       }), {});
   };
 
@@ -33,16 +33,16 @@ class SystemInfo extends Component {
     return (
       <div className="Statistics">
         <div className="Statistics-Item">
-          <Typography variant="h5">{`Errors: ${errors || 'No Data'}`}</Typography>
-          <SecondaryTypography variant="h6">{`Average: ${avgErrors || 'No Data'}`}</SecondaryTypography>
+          <Typography variant="h6">{`Errors: ${errors || 'No Data'}`}</Typography>
+          <SecondaryTypography variant="subtitle1">{`Average: ${avgErrors || 'No Data'}`}</SecondaryTypography>
         </div>
         <div className="Statistics-Item">
-          <Typography variant="h5">{`Zeroes: ${zeroes || 'No Data'}`}</Typography>
-          <SecondaryTypography variant="h6">{`Average: ${avgZeroes || 'No Data'}`}</SecondaryTypography>
+          <Typography variant="h6">{`Zeroes: ${zeroes || 'No Data'}`}</Typography>
+          <SecondaryTypography variant="subtitle1">{`Average: ${avgZeroes || 'No Data'}`}</SecondaryTypography>
         </div>
         <div className="Statistics-Item">
-          <Typography variant="h5">{`Timeouts: ${timeout || 'No Data'}`}</Typography>
-          <SecondaryTypography variant="h6">{`Average: ${avgTimeout || 'No Data'}`}</SecondaryTypography>
+          <Typography variant="h6">{`Timeouts: ${timeout || 'No Data'}`}</Typography>
+          <SecondaryTypography variant="subtitle1">{`Average: ${avgTimeout || 'No Data'}`}</SecondaryTypography>
         </div>
       </div>
     );
@@ -103,7 +103,7 @@ class SystemInfo extends Component {
         className="Graph-Description-Item-Indicator"
         style={{ backgroundColor: index === null ? COLOR_GREY : COLORS[index % COLORS.length] }}
       />
-      <Typography variant="h6">{`${code ? `Error ${code}` : 'Other'}: ${count}`}</Typography>
+      <Typography variant="subtitle1">{`${code ? `Error ${code}` : 'Other'}: ${count}`}</Typography>
     </div>
   );
 

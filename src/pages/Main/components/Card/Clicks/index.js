@@ -10,7 +10,11 @@ const formatCtr = ctr => numeral(ctr / 100).format('0[.0]%');
 
 
 const Clicks = ({
-  clicksCurrent, clicksPrevious, ctr, currentPeriod, previousPeriod,
+  clicksCurrent,
+  clicksPrevious,
+  currentPeriod,
+  previousPeriod,
+  ctr,
 }) => (
   <Card
     isImprovement={isImprovement(clicksCurrent, clicksPrevious)}

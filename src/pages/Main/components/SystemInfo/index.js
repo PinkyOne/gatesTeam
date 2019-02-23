@@ -56,11 +56,16 @@ class SystemInfo extends Component {
     if (!errors.length) {
       return (<div className="Graph" />);
     }
+    const arrayCountsSum = array => array.reduce(
+      (partialSum, currentEl) => partialSum + currentEl.count,
+      0,
+    );
 
-    const errorsCount = errors.reduce((acc, cur) => acc + cur.count, 0);
+    const errorsCount = arrayCountsSum(errors);
     const sortedErrors = errors.filter(error => error.code).sort((x, y) => y.count - x.count);
-    const unknownErrorsCount = [errors.find(error => !error.code), ...sortedErrors.slice(3)]
-      .reduce((acc, cur) => acc + cur.count, 0);
+    const unknownErrorsCount = arrayCountsSum(
+      [errors.find(error => !error.code), ...sortedErrors.slice(3)],
+    );
 
     return (
       <div className="Graph">

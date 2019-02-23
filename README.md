@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `python server/server.py`
+### `cd server/ && python server.py`
 
 Runs the data server with mocks.
 

@@ -17,7 +17,7 @@ function* fetchData(action) {
     const { data } = yield call(axios.get, `http://localhost:8080/${period}`);
     yield put(actions.fetchDataSucceeded(normalizeResponse(data, period)));
   } catch (e) {
-    yield put(actions.fetchDataFailted({ message: e.message }));
+    yield put(actions.fetchDataFailed({ message: e.message }));
   } finally {
     yield put(actions.setFetching(false));
   }

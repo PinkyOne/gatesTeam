@@ -10,7 +10,7 @@ export const actions = {
     type: actions.DATA_FETCH_SUCCEEDED,
     payload: { ...response },
   }),
-  fetchDataFailted: response => ({
+  fetchDataFailed: response => ({
     type: actions.DATA_FETCH_FAILED,
     payload: { ...response },
   }),

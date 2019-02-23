@@ -25,12 +25,6 @@
     align-items: center;
 }
 
-.AdditionalInfo {
-    display: flex;
-    flex-direction: column;
-    margin-left: 85px;
-}
-
 .MainInfo-Current {
     display: flex;
     flex-direction: row;
@@ -48,4 +42,19 @@
 
 .MainInfo-Label {
     margin-left: 10px;
+}
+
+.AdditionalInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 85px;
+}
+
+.AdditionalInfo-HelpLinks {
+    display: flex;
+    flex-direction: row;
+}
+
+.AdditionalInfo-HelpLinks-Item {
+    margin-left: 2px;
 }

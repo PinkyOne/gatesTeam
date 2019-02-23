@@ -50,17 +50,17 @@ class Card extends Component {
             : primaryInfo
         }
         <SecondaryTypography variant="subtitle2" gutterBottom>{secondaryInfo}</SecondaryTypography>
-        <Typography>
+        <div className="AdditionalInfo-HelpLinks">
           <Typography variant="subtitle2" inline>Help: </Typography>
           {helpLinks.map(({ label, link }, index) => (
-            <React.Fragment>
-              <Link key={link} variant="subtitle2" href={link}>
+            <div key={link} className="AdditionalInfo-HelpLinks-Item">
+              <Link variant="subtitle2" href={link}>
                 {label}
               </Link>
               {index !== helpLinks.length - 1 && <Typography variant="subtitle2" inline>,</Typography>}
-            </React.Fragment>
+            </div>
           ))}
-        </Typography>
+        </div>
       </div>
     );
   };

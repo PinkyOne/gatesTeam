@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiTabs from '@material-ui/core/Tabs';
 
@@ -20,25 +20,20 @@ const styles = () => ({
   },
 });
 
-class Tabs extends Component {
-  render() {
-    const { value, handleChange, ...rest } = this.props;
-    return (
-      <MuiTabs
-        {...rest}
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        scrollButtons="off"
-      >
-        <Tab label="Last hour" />
-        <Tab label="Today" />
-        <Tab label="Yesterday" />
-        <Tab label="Last 3 days" />
-      </MuiTabs>
-    );
-  }
-}
+const Tabs = ({ value, handleChange, ...rest }) => (
+  <MuiTabs
+    {...rest}
+    value={value}
+    onChange={handleChange}
+    indicatorColor="primary"
+    textColor="primary"
+    scrollButtons="off"
+  >
+    <Tab label="Last hour" />
+    <Tab label="Today" />
+    <Tab label="Yesterday" />
+    <Tab label="Last 3 days" />
+  </MuiTabs>
+);
 
 export default withStyles(styles, { withTheme: true })(Tabs);

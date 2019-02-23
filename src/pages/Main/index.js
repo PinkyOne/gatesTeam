@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import moment from 'moment';
+
 import Tabs from './components/Tabs';
 import Searches from './components/Card/Searches';
 import Clicks from './components/Card/Clicks';
@@ -15,16 +16,7 @@ import SystemInfo from './components/SystemInfo';
 import actions from '../../store/actions';
 
 
-const styles = theme => ({
-  root: {
-    ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
-    height: 775,
-    width: 750,
-    margin: '50px auto auto auto',
-  },
-});
+import styles from './styles';
 
 class Main extends Component {
   componentDidMount() {

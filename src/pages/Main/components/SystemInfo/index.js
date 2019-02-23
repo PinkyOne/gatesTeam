@@ -88,6 +88,7 @@ class SystemInfo extends Component {
 
   renderGraphLineChunk = ({ index = null, count, totalCount }) => (
     <div
+      key={index}
       style={{
         backgroundColor: index === null ? COLOR_GREY : COLORS[index % COLORS.length],
         width: `${(count * 100 / totalCount)}%`,
@@ -97,6 +98,7 @@ class SystemInfo extends Component {
 
   renderGraphDescItem = ({ code = null, count, index = null }) => (
     <div
+      key={code}
       className="Graph-Description-Item"
     >
       <div

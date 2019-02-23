@@ -22,7 +22,7 @@ class Card extends Component {
       <div className="MainInfo">
         <div className="MainInfo-Title">
           <Typography variant="h6">{title}</Typography>
-          <Chip titleDiff={titleDiff} isImprovement={isImprovement} />
+          {typeof titleDiff === 'string' && <Chip titleDiff={titleDiff} isImprovement={isImprovement} />}
         </div>
         <div className="MainInfo-Current">
           <Typography variant="subtitle1">{currentInfoValue}</Typography>

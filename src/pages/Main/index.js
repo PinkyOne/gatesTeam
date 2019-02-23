@@ -34,7 +34,7 @@ class Main extends Component {
       props: {
         data: {
           errors, avgErrors, zeroes, avgZeroes, timeout, avgTimeout,
-        },
+        } = {},
       },
     } = this;
     return {

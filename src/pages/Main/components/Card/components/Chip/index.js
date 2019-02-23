@@ -18,10 +18,15 @@ const getChipStyles = isImprovement => ({
   },
 });
 
-const Chip = ({ titleDiff, isImprovement }) => {
+const Chip = ({ titleDiff, isImprovement, ...rest }) => {
   const chipStyles = getChipStyles(isImprovement);
   const StyledChip = withStyles(chipStyles)(MuiChip);
-  return !!titleDiff && <StyledChip label={titleDiff} isImprovement={isImprovement} />;
+  return !!titleDiff && (
+  <StyledChip
+    label={titleDiff}
+    {...rest}
+  />
+  );
 };
 
 export default Chip;

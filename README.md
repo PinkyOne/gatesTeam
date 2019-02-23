@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `python server/server.py`
+
+Runs the data server with mocks.
+
 ### `npm start`
 
 Runs the app in the development mode.<br>

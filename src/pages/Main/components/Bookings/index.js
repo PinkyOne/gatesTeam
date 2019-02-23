@@ -2,8 +2,8 @@ import React from 'react';
 import * as numeral from 'numeral';
 import Typography from '@material-ui/core/Typography';
 
-import Card from '../Card/index';
-import { mainInfo, titleInfo } from '../Card/utils';
+import Card from '../../../../components/Card/index';
+import { mainInfo, titleInfo } from '../../../../components/Card/utils';
 
 import { ReactComponent as ShoppingCardGreen } from './assets/ShoppingCardGreen.svg';
 import { ReactComponent as ShoppingCardRed } from './assets/ShoppingCardRed.svg';

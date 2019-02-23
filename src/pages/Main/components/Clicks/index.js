@@ -1,12 +1,12 @@
 import React from 'react';
 import * as numeral from 'numeral';
 
-import Card from '../Card/index';
-import { mainInfo, titleInfo } from '../Card/utils';
+import Card from '../../../../components/Card/index';
+import { mainInfo, titleInfo } from '../../../../components/Card/utils';
 
 import { ReactComponent as ClickGreen } from './assets/ClickGreen.svg';
 import { ReactComponent as ClickRed } from './assets/ClickRed.svg';
-import { GreenTypography, RedTypography } from '../Card/components/SecondaryTypography/index';
+import { GreenTypography, RedTypography } from '../../../../components/Card/components/SecondaryTypography/index';
 
 const formatCtr = ctr => numeral(ctr / 100).format('0[.0]%');
 

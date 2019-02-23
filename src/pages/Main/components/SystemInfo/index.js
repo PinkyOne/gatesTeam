@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as numeral from 'numeral';
 import Typography from '@material-ui/core/Typography';
-import SecondaryTypography from '../Card/components/SecondaryTypography';
+import SecondaryTypography from '../../../../components/Card/components/SecondaryTypography';
 
 import './index.css';
 

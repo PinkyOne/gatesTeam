@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import moment from 'moment';
 
-import Tabs from './components/Tabs';
+import Tabs from '../../components/Tabs';
 import Searches from './components/Searches';
 import Clicks from './components/Clicks';
 import Bookings from './components/Bookings';

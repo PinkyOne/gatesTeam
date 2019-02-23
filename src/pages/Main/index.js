@@ -82,7 +82,7 @@ class Main extends Component {
 
   render() {
     const {
-      classes, tabValue, errors, data, isFetching,
+      classes, tabValue, errors, data, isFetching, apiError,
     } = this.props;
     const periods = {
       currentPeriod: this.getCurrentPeriod(tabValue),
@@ -94,16 +94,21 @@ class Main extends Component {
           Main metrics
         </Typography>
         <Tabs value={tabValue} handleChange={this.handleChange} />
-        {!isFetching && (
-          <React.Fragment>
-            <SystemInfo errors={errors} statistics={this.getStatistics()} />
-            <Searches {...{ ...data, ...periods }} />
-            <Divider variant="middle" />
-            <Clicks {...{ ...data, ...periods }} />
-            <Divider variant="middle" />
-            <Bookings {...{ ...data, ...periods }} />
-          </React.Fragment>
-        )}
+        {!isFetching
+          && (
+            apiError
+              ? <Typography variant="h1">{apiError.message}</Typography>
+              : (
+                <React.Fragment>
+                  <SystemInfo errors={errors} statistics={this.getStatistics()} />
+                  <Searches {...{ ...data, ...periods }} />
+                  <Divider variant="middle" />
+                  <Clicks {...{ ...data, ...periods }} />
+                  <Divider variant="middle" />
+                  <Bookings {...{ ...data, ...periods }} />
+                </React.Fragment>
+              )
+          )}
       </Paper>
     );
   }

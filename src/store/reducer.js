@@ -18,6 +18,7 @@ export default (state = defaultState, action) => {
         ...state,
         data: action.payload.data,
         errors: action.payload.errors,
+        apiError: null,
       };
     case actions.DATA_FETCH_FAILED:
       return {
@@ -27,7 +28,7 @@ export default (state = defaultState, action) => {
     case actions.SET_FETCHING:
       return {
         ...state,
-        apiError: action.payload,
+        isFetching: action.payload,
       };
     default:
       return state;

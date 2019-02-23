@@ -1,10 +1,12 @@
 import React from 'react';
 import * as numeral from 'numeral';
 import Typography from '@material-ui/core/Typography';
-import Card from '../../../../components/Card/index';
+
+import Card from 'components/Card';
+import { mainInfo, titleInfo } from 'components/Card/utils';
+
 import { ReactComponent as FilterGreen } from './assets/FilterGreen.svg';
 import { ReactComponent as FilterRed } from './assets/FilterRed.svg';
-import { mainInfo, titleInfo } from '../../../../components/Card/utils';
 
 const formatTraffic = traffic => numeral(traffic / 100).format('0%');
 

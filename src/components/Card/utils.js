@@ -1,4 +1,4 @@
-import { getFormattedDiff, isImprovement } from '../../utils';
+import { getFormattedDiff, isImprovement } from 'utils';
 
 export const titleInfo = (title, current, previous, positiveIcon, negativeIcon) => ({
   isImprovement: isImprovement(current, previous),

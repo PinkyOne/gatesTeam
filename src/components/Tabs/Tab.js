@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles/index';
+import { withStyles } from '@material-ui/core/styles';
 import MuiTab from '@material-ui/core/Tab';
 
 import blue from '@material-ui/core/colors/blue';

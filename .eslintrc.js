@@ -9,16 +9,23 @@ module.exports = {
     'airbnb',
   ],
   'rules': {
-    "react/jsx-filename-extension": "off",
-    "react/prop-types": "off",
-    "import/no-named-as-default": "off",
-    "import/prefer-default-export": "off"
+    'react/jsx-filename-extension': 'off',
+    'react/prop-types': 'off',
+    'import/no-named-as-default': 'off',
+    'import/prefer-default-export': 'off'
   },
-  "parser": "babel-eslint",
+  'parser': 'babel-eslint',
   'parserOptions': {
     'ecmaFeatures': {
       'jsx': true,
-      "ecmaVersion": 2018,
+      'ecmaVersion': 2018,
+    }
+  },
+  'settings': {
+    'import/resolver': {
+      'node': {
+        'paths': ['src']
+      }
     }
   }
 };

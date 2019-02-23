@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withStyles } from '@material-ui/core/styles';
+import moment from 'moment';
 
+import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import moment from 'moment';
 
-import Tabs from '../../components/Tabs';
+import Tabs from 'components/Tabs';
+import actions from 'store/actions';
+
 import Searches from './components/Searches';
 import Clicks from './components/Clicks';
 import Bookings from './components/Bookings';
 import SystemInfo from './components/SystemInfo';
-
-import actions from '../../store/actions';
-
 
 import styles from './styles';
 

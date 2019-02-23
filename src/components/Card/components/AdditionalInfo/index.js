@@ -1,7 +1,8 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import SecondaryTypography from '../../../SecondaryTypography';
+
+import SecondaryTypography from 'components/SecondaryTypography';
 
 const AdditionalInfo = ({
   primaryInfo,

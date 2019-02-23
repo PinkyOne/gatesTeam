@@ -1,7 +1,8 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Chip from '../../../Chip';
-import SecondaryTypography from '../../../SecondaryTypography';
+
+import Chip from 'components/Chip';
+import SecondaryTypography from 'components/SecondaryTypography';
 
 const MainInfo = ({
   title,

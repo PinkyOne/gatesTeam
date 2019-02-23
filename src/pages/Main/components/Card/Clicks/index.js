@@ -1,10 +1,10 @@
 import React from 'react';
 import * as numeral from 'numeral';
-import Card from '../../../../components/Card';
-import { getFormattedDiff, isImprovement } from '../../../../utils';
+import Card from '../index';
+import { getFormattedDiff, isImprovement } from '../../../../../utils';
 import { ReactComponent as ClickGreen } from './assets/ClickGreen.svg';
 import { ReactComponent as ClickRed } from './assets/ClickRed.svg';
-import { GreenTypography, RedTypography } from '../../../../components/Card/components/SecondaryTypography';
+import { GreenTypography, RedTypography } from '../components/SecondaryTypography/index';
 
 const formatCtr = ctr => numeral(ctr / 100).format('0[.0]%');
 

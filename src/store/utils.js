@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 export function snakeToCamel(string) {
   return string.replace(/(_\w)/g, m => m[1].toUpperCase());
 }

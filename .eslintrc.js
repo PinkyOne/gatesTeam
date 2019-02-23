@@ -11,7 +11,8 @@ module.exports = {
   'rules': {
     "react/jsx-filename-extension": "off",
     "react/prop-types": "off",
-    "import/no-named-as-default": "off"
+    "import/no-named-as-default": "off",
+    "import/prefer-default-export": "off"
   },
   "parser": "babel-eslint",
   'parserOptions': {

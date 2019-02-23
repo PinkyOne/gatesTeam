@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import SecondaryTypography from './components/SecondaryTypography';
+import SecondaryTypography from './components/SecondaryTypography/index';
 import { ReactComponent as Arrow } from './assets/Arrow.svg';
-import Chip from './components/Chip';
+import Chip from './components/Chip/index';
 
 import './index.css';
 

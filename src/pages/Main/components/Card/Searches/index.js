@@ -1,8 +1,8 @@
 import React from 'react';
 import * as numeral from 'numeral';
 import Typography from '@material-ui/core/Typography';
-import Card from '../../../../components/Card';
-import { getFormattedDiff, isImprovement } from '../../../../utils';
+import Card from '../index';
+import { getFormattedDiff, isImprovement } from '../../../../../utils';
 import { ReactComponent as FilterGreen } from './assets/FilterGreen.svg';
 import { ReactComponent as FilterRed } from './assets/FilterRed.svg';
 
